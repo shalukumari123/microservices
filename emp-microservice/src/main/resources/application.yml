@@ -1,0 +1,27 @@
+server:
+ port: 8180
+ #address: theta
+ 
+
+spring:
+  application:
+   name: emp-service
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    password: ${DB_PASSWORD:welcome1}
+    url: ${JDBC_URL:jdbc:mariadb://training.crnasbluim9w.us-east-1.rds.amazonaws.com:3306/training}
+    username: ${DB_USER:admin}
+  jpa:
+    show-sql: true
+logging:
+  level:
+    '[org.springframework]': warn
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka/}
+
+    

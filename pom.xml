@@ -1,0 +1,15 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.demo</groupId>
+  <artifactId>mocroservices-bundle</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  <name>mocroservices-bundle</name>
+  <modules>
+  	<module>dept-microservice</module>
+  	<module>emp-microservice</module>
+  	<module>gateway-microservice</module>
+  	<module>hello-eureka-server</module>
+  	<module>hr-service</module>
+  </modules>
+</project>

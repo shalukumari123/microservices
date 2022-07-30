@@ -1,0 +1,37 @@
+server:
+ port: 9000
+
+spring:
+ application: 
+  name: gateway-service
+ cloud:
+   gateway:
+     routes:
+      - id: dpt_service
+        uri: http://192.168.1.5:8480/
+        predicates:
+         - Path=/dept/** #the part of back end application uri
+      - id: emp_service
+        uri: http://192.168.1.5:8180/
+        predicates:
+         - Path=/emp/**
+      - id: hr_service
+        uri: http://192.168.1.5:8580/
+        predicates:
+         - Path=/hr/**
+      - id: google
+        uri: http://www.google.com
+        predicates: 
+         - Path=/redirect/**
+        
+         
+client:
+  register-with-eureka: true
+  service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka/}
+ 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
